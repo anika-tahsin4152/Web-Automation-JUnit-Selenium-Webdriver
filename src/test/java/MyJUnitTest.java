@@ -49,14 +49,10 @@ public class MyJUnitTest {
             action.click(buttons.get(0)).perform();
 
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
             WebElement dateInput = driver.findElement(By.id("edit-date"));
-            dateInput.click();
             dateInput.clear();
-
-
-            dateInput.sendKeys("04");
-            dateInput.sendKeys(Keys.ARROW_RIGHT);
-            dateInput.sendKeys("o");
+            dateInput.sendKeys("04Oct");
             dateInput.sendKeys(Keys.ARROW_RIGHT);
             dateInput.sendKeys("2023");
 
@@ -97,7 +93,7 @@ public class MyJUnitTest {
     @AfterAll
     public static void quitBrowser() {
 
-        driver.quit();
+//        driver.quit();
 
     }
 }
